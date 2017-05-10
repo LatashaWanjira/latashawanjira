@@ -1,0 +1,31 @@
+<% content_for(:title, "Skills | Latasha Wanjira") %>
+
+<div class="container-fluid">
+	<h2>Skills</h2>
+	<hr>
+	<% if @skills.any? %>
+		<table>                         
+			<tr>                          
+				<th align="center">Skill</th>
+				<th>Proficiency</th>
+			</tr>
+			<% @skills.each do |skill| %> 
+				<tr>
+					<% if admin_signed_in? %>
+						<td><%= link_to skill.skill_name, skill_path(skill) %></td> 
+					<% else%>
+						<td><%= skill.skill_name %></td> 
+					<% end %>
+					<td><%= skill.proficiency_level %></td>
+				</tr>
+			<% end %>                       
+		</table>
+
+	<% else %>
+		<p>Under maintenance</p>
+	<% end %>
+	<% if admin_signed_in? %>
+		<hr>
+		<p><%= link_to "Add New Skill", new_skill_path %></p>
+	<% end %>
+</div>

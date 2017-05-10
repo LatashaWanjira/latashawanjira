@@ -1,0 +1,8 @@
+<%= content_for(:title, "Skill | Latasha Wanjira") %>
+
+<div class="container-fluid">
+	<h2><%= @skill.skill_name %></h2>
+	<p>Level of Proficiency: <%= @skill.proficiency_level %></p>
+
+	<p><%= link_to "Edit Skill", edit_skill_path %> | <%= link_to "Delete Skill", skill_path(@skill), :data => { :confirm => "Are you sure you want to delete this skill?", :method => "delete" } %></p>
+</div>

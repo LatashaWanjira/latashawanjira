@@ -1,0 +1,52 @@
+<% content_for(:title, "Projects | Latasha Wanjira") %>
+
+<div class="container-fluid">
+	<h2>Projects</h2>
+	<hr>
+	<div id="tag_cloud">
+	  <% tag_cloud Project.tag_counts, %w[s m l] do |tag, css_class| %>
+	    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+	  <% end %>
+	</div>
+	<hr>
+	<% if @projects.any? %>
+		<ul>
+		<div class="row">
+			<% @projects.each do |project| %>
+				<li>
+					<div class=" col-md-4 project project-<%= project.id %>">
+						<style media="screen">
+							.project-<%= project.id %> {
+								background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(<%= project.image.url %>);
+								background-size: cover;
+							}
+							.project-<%= project.id %>:hover {
+								-webkit-filter: grayscale(100%); 
+								    filter: grayscale(100%);
+								-webkit-transition: all 0.4s;
+								-moz-transition: all 0.4s;
+								-o-transition: all 0.4s;
+								transition: all 0.4s;
+							}
+						</style>
+						<h3><%= link_to project.project_name, project_path(project), class: "project-text" %></h3>
+					<% if admin_signed_in?%>
+						<%= link_to "Edit", edit_project_path(project) %> |
+						<%= link_to "Delete", project_path(project), :data => {:confirm => "Are you sure?",:method => "delete"} %>
+					<% end %>
+					</div>
+				</li>
+			<% end %>
+			</div>
+		</ul>	
+	<% else %>
+		<p>Under maintenance</p>
+	<% end %>
+
+
+	<% if admin_signed_in? %>
+		<p><%= link_to "Add New Project", new_project_path %></p>
+	<% end %>
+</div>
+
+

@@ -1,0 +1,16 @@
+<%= render "layouts/errors", :object => @skill %>
+
+<%= form_for @skill do |f| %>
+
+	<div class="form-group">
+		<%= f.label :skill_name %>	
+		<%= f.text_field :skill_name %>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label :proficiency_level %>
+		<%= f.select(:proficiency_level, options_for_select(['Knowledgable', 'Skilled'], :selected => f.object.proficiency_level), { :prompt => "Select a Level" }) %>
+	</div>
+	
+	<%= f.submit %>
+<% end %>

@@ -1,0 +1,65 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+li {
+    list-style: none;
+}
+
+.project {
+    margin: 10px;
+    padding: 75px;
+}
+
+.project-show img {
+    float: right;
+    width: 100%;
+    height: auto;
+}
+
+.project-show {
+    padding-top: 50px;
+}
+
+.project-show h2 {
+    font-size: 40px;
+}
+
+.project-text {
+    color: white;
+}
+
+.project-text:hover {
+    color: white;
+    text-decoration: none;
+}
+
+#tag_cloud {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    line-height: 1.6em;
+    .s {
+        font-size: 0.8em;
+    }
+    .m {
+        font-size: 1.2em;
+    }
+    .l {
+        font-size: 1.6em;
+    }
+    .s,
+    .m,
+    .l {
+        border: 2px solid black;
+        padding: 20px;
+        color: white;
+        background-color: black;
+    }
+    .s:hover,
+    .m:hover,
+    .l:hover {
+        color: black;
+        background-color: white;
+        text-decoration: none;
+    }
+}

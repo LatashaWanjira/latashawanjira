@@ -1,0 +1,16 @@
+<% content_for(:title, "Blog Posts | Latasha Wanjira") %>
+
+<div class="container-fluid blogposts">
+	<h2>Blog Posts</h2>
+	<hr>
+	<% if @blogposts.any? %>
+		<ul>
+			<% @blogposts.each do |blogpost| %>
+				<li><%= link_to blogpost.title, blogpost_path(blogpost), class: "blogposts-header" %> <br>
+				<%= truncate(blogpost.body, :length => 100) %><%= link_to "Read more", blogpost_path(blogpost) %></li> <hr>
+			<% end %>
+		</ul>	
+	<% else %>
+		<p>Under maintenance</p>
+	<% end %>
+</div>

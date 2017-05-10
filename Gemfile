@@ -38,7 +38,10 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-end
+  gem 'rspec-rails'
+  gem 'launchy'
+  gem 'pry'
+gem 'shoulda-matchers'end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -51,5 +54,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise'
+
+gem "paperclip", "~> 5.0.0"
+
+gem 'bootstrap-sass'
+
+gem 'sprockets-rails'
+
+gem 'acts-as-taggable-on', '~> 4.0'
 
 ruby "2.4.1"

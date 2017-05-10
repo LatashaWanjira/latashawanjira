@@ -1,3 +1,120 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#landing-page {
+    margin-top: -50px;
+    background-color: black;
+    padding: 169px;
+}
+
+.landing-page-text {
+    margin-top: 40px;
+    padding-bottom: 5px;
+    color: white;
+    text-align: right;
+}
+
+.landing-page-text h1 {
+    font-size: 100px;
+    font-family: 'Satisfy', cursive;
+    font-weight: normal;
+    -vendor-animation-duration: 3s;
+    -vendor-animation-delay: 10s;
+    -vendor-animation-iteration-count: 1;
+}
+
+
+/* Wrapper */
+
+.icon {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 3.0rem;
+    height: 5.0rem;
+    line-height: 5.0rem;
+    margin: 0 5px;
+    position: relative;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 5.0rem;
+}
+
+.icon:hover {
+    border-radius: 5.0rem;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+
+/* Circle */
+
+.icon span {
+    #border-radius: 0;
+    display: block;
+    height: 0;
+    left: 40%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    width: 0;
+}
+
+.icon:hover span {
+    width: 5.0rem;
+    height: 5.0rem;
+    border-radius: 5.0rem;
+    margin: -1.8rem;
+}
+
+.twitter span {
+    background-color: #4099ff;
+}
+
+.github span {
+    background-color: #333;
+}
+
+.linkedin span {
+    background-color: #0077b5;
+}
+
+
+/* Icons */
+
+.icon i {
+    background: none;
+    color: white;
+    height: 5.0rem;
+    left: 2.2px;
+    line-height: 5.0rem;
+    position: absolute;
+    top: 7.5px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    width: 5.0rem;
+    z-index: 10;
+}
+
+.icon .ion-social-twitter,
+.icon .ion-social-github,
+.icon .ion-social-linkedin {
+    transition: background-color 0.3s ease;
+    color: white;
+}
+
+.icon:hover .ion-social-twitter,
+.icon:hover .ion-social-github,
+.icon:hover .ion-social-linkedin {
+    color: white;
+}
